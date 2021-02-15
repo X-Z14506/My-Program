@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MyFileSearch:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyFileSearch_jar</output-path>
+    <root id="archive" name="MyFileSearch.jar">
+      <element id="module-output" name="MyFileSearch" />
+      <element id="extracted-dir" path="D:/java软件工具/Repository/Maven/com/belerweb/pinyin4j/2.5.1/pinyin4j-2.5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/java软件工具/Repository/Maven/org/xerial/sqlite-jdbc/3.28.0/sqlite-jdbc-3.28.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

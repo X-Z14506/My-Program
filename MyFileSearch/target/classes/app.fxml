@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+
+<!--布局控件GridPane，fx:controller属性用于声明事件处理的Controller，值为Controller类的类全名-->
+<!--xmlns用于声明默认命名空间，这里的声明随着你安装的Java JDK版本号的不同可以不同，但是最好不要比你安装的JDK版本高-->
+<GridPane xmlns:fx="x"
+          fx:id="rootPane"
+          alignment="center"
+          hgap="10" vgap="10"
+          fx:controller="org.example.ui.Controller">
+    <!--声明一个Button元素，fx:id用于给该Button一个标示，用于和Controller类中的Button实例进行绑定-->
+    <!--onMouseClicked用于绑定Button的点击事件，choose前面的#用于和Controller中处理函数进行绑定-->
+    <Button onMouseClicked="#choose" prefWidth="90" text="选择目录" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label fx:id="srcDirectory" text="请点击左边按钮">
+        <GridPane.margin>
+            <Insets left="100.0"/>
+        </GridPane.margin>
+    </Label>
+    <TextField fx:id="searchField" prefWidth="900" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <TableView fx:id="fileTable"  prefHeight="700" prefWidth="900" GridPane.columnIndex="0" GridPane.columnSpan="2"
+               GridPane.rowIndex="2">
+        <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="220" text="名称">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn prefWidth="400" text="路径">
+                <cellValueFactory>
+                    <PropertyValueFactory property="path"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="sizeColumn" prefWidth="120" text="大小">
+                <cellValueFactory>
+                    <PropertyValueFactory property="lengthUI"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="lastModifiedColumn" prefWidth="160" text="修改时间">
+                <cellValueFactory>
+                    <PropertyValueFactory property="lastModifyUI"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</GridPane>
